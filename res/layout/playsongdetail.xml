@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relPlaySongdetail"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+	<RelativeLayout
+	    android:id="@+id/relForSongsInPlaySongDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/moviebackbg">
+	    <ImageView
+            android:id="@+id/closeInPlaySongDetail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/closebtn"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"/>
+
+	    <RelativeLayout
+	        android:id="@+id/relForAlbumTitleInPlaySongDetail"
+	        android:layout_width="fill_parent"
+	        android:layout_height="50dp"
+	        android:layout_below="@+id/closeInPlaySongDetail"
+	        android:layout_marginLeft="15dp"
+	        android:layout_marginRight="15dp"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="10dp"
+	        android:background="@drawable/titlebg" >
+
+            <ImageView
+                android:id="@+id/imgAlbumDetInPlayDetail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/musicart" />
+            
+	        <TextView
+                android:id="@+id/btnTitleInPlaySongDetail"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imgAlbumDetInPlayDetail"
+                android:singleLine="true"
+                android:textColor="#FFFF00"
+                android:textSize="14sp"
+                android:typeface="normal" />
+
+            <ImageView
+                android:id="@+id/imgPlayInSongDetInPlaySongDetail"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/imgAddPlaylistInSongDetInPlaySongDetail"
+                android:src="@drawable/musicplay" />
+
+            <ImageView
+                android:id="@+id/imgAddPlaylistInSongDetInPlaySongDetail"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/addbtn" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relForSongDetInPlaySongDetail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/relForAlbumTitleInPlaySongDetail"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/settingsframe" >
+
+            <ScrollView
+                android:id="@+id/scrollInPlaySongDetail"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="false"
+                android:scrollbars="none" >
+
+                <TableLayout
+                    android:id="@+id/tblLayoutInPlaySongDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" >
+                    
+                </TableLayout>
+            </ScrollView>
+        </RelativeLayout>
+	</RelativeLayout>
+</RelativeLayout>

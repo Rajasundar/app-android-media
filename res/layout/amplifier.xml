@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeInPopup"
+    android:layout_width="fill_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical" >
+    
+     
+
+    <ScrollView
+        android:id="@+id/scrollForAmpInPopup"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp"
+        android:cacheColorHint="#ff000000"
+        android:fadeScrollbars="false"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="10dp"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+         >
+
+        <TableLayout
+            android:id="@+id/tlTable01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#333333"
+            android:paddingTop="1dp">
+
+             
+        </TableLayout>
+    </ScrollView>
+    
+    <ImageView
+            android:id="@+id/clos_amp_pop"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/closebtn" />
+
+</RelativeLayout>

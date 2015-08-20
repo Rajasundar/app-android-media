@@ -1,0 +1,189 @@
+package org.milan.climax.db;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+public class MilanClimaxDBHelper extends SQLiteOpenHelper {
+
+	private static String LOGCAT = "MILANCLIMAXDBHELPER";
+
+	private static final String DATABASE_NAME = "milanclimax.db";
+	private static final int DATABASE_VERSION = 1;
+
+	public static final String PROFILE_TABLE_NAME = "profile",
+			COLUMN_PROFILE_ID = "profile_id",
+			COLUMN_PROFILE_NAME = "profile_name",
+			COLUMN_PROFILE_ROOM = "room_name",
+			COLUMN_PROFILE_MEDIA_IP = "milan_media_ip",
+			COLUMN_PRFOILE_ACTIVATION = "status",
+			COLUMN_PROFILE_MEDIA_GATEWY = "milan_gateway_ip",
+			COLUMN_PROFILE_USERNAME = "username",
+			COLUMN_PROFILE_PASSWORD = "password",
+			COLUMN_PROFILE_MEDIA_UPDATE = "media_update",
+			COLUMN_PROFILE_TAB_UPDATE = "tab_update";
+	// Audio Table
+	public static final String AUDIO_TABLE_NAME = "audio",
+			RECENTLY_ADDED_AUDIO_TABLE_NAME = "recently_added_songs",
+			COLUMN_AUDIO_ID = "table_id", COLUMN_AUDIO_ALBUM_ID = "album_id",
+			COLUMN_AUDIO_ARTIST_ID = "artist_id",
+			COLUMN_AUDIO_ARTIST_NAME = "artist_name",
+			COLUMN_AUDIO_DURATION = "duration",
+			COLUMN_AUDIO_PROFILE_IP = "audio_profile_ip",
+			COLUMN_AUDIO_LABEL = "label", COLUMN_AUDIO_TITLE = "title",
+			COLUMN_AUDIO_THUMBNAIL = "thumbnail";
+
+	// Songs Table
+	public static final String AUDIO_SONG_TABLE_NAME = "audio_songs",
+			COLUMN_AUDIO_SONG_ID = "table_id",
+			COLUMN_AUDIO_SONG_DURATION = "audio_song_duration",
+			COLUMN_AUDIO_SONG_LABEL = "audio_song_label",
+			COLUMN_SONG_ID = "song_id",
+			COLUMN_AUDIO_SONG_THUMBNAIL = "audio_song_thumbnail",
+			COLUMN_AUDIO_SONG_PLAYCOUNT = "playcount";
+	//Artist Table 
+	public static final String AUDIO_ARTIST_TABLE_NAME = "audio_artist",
+			COLUMN_AUDIO_ARTIST_LABEL = "audio_artist_label",
+					COLUMN_AUDIO_ARTISTID = "audio_artist_id",
+			COLUMN_AUDIO_ARTIST_THUMBNAIL = "audio_artist_thumbnail";
+	
+	// Video Table
+	public static final String VIDEO_TABLE_NAME = "video",
+			COLUMN_VIDEO_ID = "table_id",
+					RECENTLY_ADDED_VIDEO_TABLE_NAME = "recently_added_movies",
+			/* COLUMN_VIDEO_DURATION = "duration", */
+			COLUMN_VIDEO_PROFILE_IP = "video_profile_ip",
+			COLUMN_VIDEO_MOVIE_DIRECTOR = "director",
+			COLUMN_VIDEO_MOVIE_ID = "movie_id",
+			COLUMN_VIDEO_MOVIE_FANART = "fanart",
+			COLUMN_VIDEO_MOVIE_GENRE = "genre",
+			COLUMN_VIDEO_MOVIE_LABEL = "label",
+			COLUMN_VIDEO_MOVIE_PLOT = "plot",
+			COLUMN_VIDEO_MOVIE_PROFILE_IP = "video_profile_ip",
+			COLUMN_VIDEO_MOVIE_RUNTIME = "runtime",
+			COLUMN_VIDEO_MOVIE_RATING = "rating",
+			COLUMN_VIDEO_MOVIE_STUDIO = "studio",
+			COLUMN_VIDEO_MOVIE_TAGLINE = "tag_line",
+			COLUMN_VIDEO_MOVIE_THUMBNAIL = "thumbnail",
+			COLUMN_VIDEO_MOVIE_TITLE = "title",
+			COLUMN_VIDEO_MOVIE_TRAILER = "trailer",
+			COLUMN_VIDEO_MOVIE_YEAR = "year";
+
+	private static final String PROFILE_TABLE_CREATE = "CREATE TABLE "
+			+ PROFILE_TABLE_NAME + " (" + COLUMN_PROFILE_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_NAME
+			+ " TEXT, " + COLUMN_PROFILE_ROOM + " TEXT, "
+			+ COLUMN_PROFILE_MEDIA_IP + " TEXT, " + COLUMN_PRFOILE_ACTIVATION
+			+ " NUMERIC, " + COLUMN_PROFILE_MEDIA_GATEWY + " TEXT, "
+			+ COLUMN_PROFILE_USERNAME + " TEXT, " + COLUMN_PROFILE_PASSWORD
+			+ " TEXT, " + COLUMN_PROFILE_MEDIA_UPDATE + " TEXT, "
+			+ COLUMN_PROFILE_TAB_UPDATE + " TEXT " + ")";
+
+	public static final String AUDIO_TABLE_CREATE = "CREATE TABLE "
+			+ AUDIO_TABLE_NAME + " (" + COLUMN_AUDIO_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_AUDIO_ALBUM_ID + " INT, "
+			+ COLUMN_AUDIO_ARTIST_ID + " TEXT, " + COLUMN_AUDIO_ARTIST_NAME
+			+ " TEXT, " + COLUMN_AUDIO_PROFILE_IP + " TEXT, "
+			+ COLUMN_AUDIO_LABEL + " TEXT, " + COLUMN_AUDIO_THUMBNAIL
+			+ " TEXT, " + COLUMN_AUDIO_TITLE + " TEXT, " + " FOREIGN KEY ("
+			+ COLUMN_AUDIO_ID + ") REFERENCES " + PROFILE_TABLE_NAME + " ("
+			+ COLUMN_PROFILE_ID + "))";
+	
+	public static final String RECENTLY_ADDED_AUDIO_TABLE_CREATE = "CREATE TABLE "
+			+ RECENTLY_ADDED_AUDIO_TABLE_NAME + " (" + COLUMN_AUDIO_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_AUDIO_ALBUM_ID + " INT, "
+			+ COLUMN_AUDIO_ARTIST_ID + " TEXT, " + COLUMN_AUDIO_ARTIST_NAME
+			+ " TEXT, " + COLUMN_AUDIO_PROFILE_IP + " TEXT, "
+			+ COLUMN_AUDIO_LABEL + " TEXT, " + COLUMN_AUDIO_THUMBNAIL
+			+ " TEXT, " + COLUMN_AUDIO_TITLE + " TEXT, " + " FOREIGN KEY ("
+			+ COLUMN_AUDIO_ID + ") REFERENCES " + PROFILE_TABLE_NAME + " ("
+			+ COLUMN_PROFILE_ID + "))";
+
+	public static final String AUDIO_SONGS_TABLE_CREATE = "CREATE TABLE "
+			+ AUDIO_SONG_TABLE_NAME + " (" + COLUMN_AUDIO_SONG_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_AUDIO_ALBUM_ID
+			+ " INT, "  + COLUMN_AUDIO_PROFILE_IP + " TEXT, "
+			+ COLUMN_AUDIO_SONG_DURATION + " TEXT, "
+			+ COLUMN_AUDIO_ARTIST_ID + " TEXT, " + COLUMN_AUDIO_ARTIST_NAME
+			+ " TEXT, " + COLUMN_AUDIO_SONG_LABEL + " TEXT, " + COLUMN_SONG_ID
+			+ " TEXT, " + COLUMN_AUDIO_SONG_THUMBNAIL + " TEXT, "
+			+ COLUMN_AUDIO_SONG_PLAYCOUNT + " TEXT " + ")";
+	
+	public static final String AUDIO_ARTISTS_TABLE_CREATE = "CREATE TABLE "
+			+ AUDIO_ARTIST_TABLE_NAME + " (" + COLUMN_AUDIO_ARTIST_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_AUDIO_ARTISTID
+			+ " INT, "  + COLUMN_AUDIO_PROFILE_IP + " TEXT, "
+			+ COLUMN_AUDIO_ARTIST_LABEL + " TEXT, "
+			+ COLUMN_AUDIO_ARTIST_THUMBNAIL + " TEXT "  + ")";
+
+	private static final String VIDEO_TABLE_CREATE = "CREATE TABLE "
+			+ VIDEO_TABLE_NAME + " (" + COLUMN_VIDEO_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_VIDEO_MOVIE_ID + " INT, "
+			+ COLUMN_VIDEO_MOVIE_DIRECTOR + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_FANART + " TEXT, " + COLUMN_VIDEO_MOVIE_GENRE
+			+ " TEXT, " + COLUMN_VIDEO_MOVIE_LABEL + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_PLOT + " TEXT, " + COLUMN_VIDEO_PROFILE_IP
+			+ " TEXT, " + COLUMN_VIDEO_MOVIE_RUNTIME + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_RATING + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_TAGLINE + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_THUMBNAIL + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_TITLE + " TEXT, " + ""
+			+ COLUMN_VIDEO_MOVIE_TRAILER + " TEXT, " + COLUMN_VIDEO_MOVIE_YEAR
+			+ " TEXT,  " + COLUMN_VIDEO_MOVIE_STUDIO
+			+ " TEXT,  " + " FOREIGN KEY (" + COLUMN_VIDEO_ID + ") REFERENCES "
+			+ PROFILE_TABLE_NAME + " (" + COLUMN_PROFILE_ID + "))";
+	
+	private static final String RECENTLY_ADDED_VIDEO_TABLE_CREATE = "CREATE TABLE "
+			+ RECENTLY_ADDED_VIDEO_TABLE_NAME + " (" + COLUMN_VIDEO_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_PROFILE_ID
+			+ " INT, " + COLUMN_VIDEO_MOVIE_ID + " INT, "
+			+ COLUMN_VIDEO_MOVIE_DIRECTOR + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_FANART + " TEXT, " + COLUMN_VIDEO_MOVIE_GENRE
+			+ " TEXT, " + COLUMN_VIDEO_MOVIE_LABEL + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_PLOT + " TEXT, " + COLUMN_VIDEO_PROFILE_IP
+			+ " TEXT, " + COLUMN_VIDEO_MOVIE_RUNTIME + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_RATING + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_TAGLINE + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_THUMBNAIL + " TEXT, "
+			+ COLUMN_VIDEO_MOVIE_TITLE + " TEXT, " + ""
+			+ COLUMN_VIDEO_MOVIE_TRAILER + " TEXT, " + COLUMN_VIDEO_MOVIE_YEAR
+			+ " TEXT,  " + COLUMN_VIDEO_MOVIE_STUDIO
+			+ " TEXT,  " + " FOREIGN KEY (" + COLUMN_VIDEO_ID + ") REFERENCES "
+			+ PROFILE_TABLE_NAME + " (" + COLUMN_PROFILE_ID + "))";
+
+	public MilanClimaxDBHelper(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		db.execSQL(PROFILE_TABLE_CREATE);
+		db.execSQL(AUDIO_TABLE_CREATE);
+		db.execSQL(AUDIO_SONGS_TABLE_CREATE);
+		db.execSQL(AUDIO_ARTISTS_TABLE_CREATE);
+		db.execSQL(VIDEO_TABLE_CREATE);
+		db.execSQL(RECENTLY_ADDED_AUDIO_TABLE_CREATE);
+		db.execSQL(RECENTLY_ADDED_VIDEO_TABLE_CREATE);
+		Log.i(LOGCAT, "Table created");
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO Auto-generated method stub
+		db.execSQL("DROP TABLE IF EXISTS " + PROFILE_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + AUDIO_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + AUDIO_SONGS_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + AUDIO_ARTISTS_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + VIDEO_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + RECENTLY_ADDED_AUDIO_TABLE_CREATE);
+		db.execSQL("DROP TABLE IF EXISTS " + RECENTLY_ADDED_VIDEO_TABLE_CREATE);
+		onCreate(db);
+	}
+
+}

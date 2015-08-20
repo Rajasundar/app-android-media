@@ -1,0 +1,370 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ParentLayoutInAlbums"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:id="@+id/relForFootInAlbums"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtRightsReservedInAlbums"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text=" All Rights Reserved. \u00A9 Milanity "
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+    </RelativeLayout>
+
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/cntrlBtn"
+        android:gravity="center_horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/linearForTitleInProfileSettings"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/settingframe" >
+
+            <TextView
+                android:id="@+id/txtProfileSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Edit Profile"
+                android:textColor="#75B543"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtProfileInfoInProfileSettings"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearForTitleInProfileSettings"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearOptionInProfileSettings"
+            android:layout_below="@+id/txtProfileInfoInProfileSettings"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/settingframe" >
+
+            <ScrollView
+                android:id="@+id/scrollViewInProfileSettings"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fadingEdge="none" >
+
+                <TableLayout
+                    android:id="@+id/tblLayoutInProfileSettings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerHorizontal="true"
+                     >
+
+                    <TableRow
+                        android:id="@+id/trRoomNameInProfileSettings"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_vertical"
+                         >
+
+                        <TextView
+                            android:id="@+id/txtRoomNameView"
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:text="Room Name *"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_room_name"
+                            android:layout_width="150dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColor="#000000"
+                            android:maxLength="14"
+                            android:textSize="15sp" />
+                        <requestFocus />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trMediaIPInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/txtMediaIPInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Milan Climax IP*"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_media_ip"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="number|textUri"
+                            android:textColor="#000000"
+                            android:maxLength="15"
+                            android:textSize="15sp" />
+                    </TableRow>
+                    
+                    <TableRow
+                        android:id="@+id/trMediaPortInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/txtMediaPortInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Milan Climax Port*"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_media_port"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:textColor="#000000"
+                            android:maxLength="4"
+                            android:textSize="15sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trGatewayIPInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/txtgatewayIPInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Milan Infoway IP"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_gateway_ip"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="number|textUri"
+                            android:maxLength="15"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </TableRow>
+                    
+                    <TableRow
+                        android:id="@+id/trGatewayPortInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/txtgatewayPortInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Milan Infoway Port"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_gateway_port"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trActivateSceneInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/txtActivateSceneInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Activate Scene"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <ToggleButton
+                            android:id="@+id/edit_text_status"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:textColor="#000000"
+                            android:textOff="OFF"
+                            android:textOn="ON"
+                            android:textSize="15sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trUserNameInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/txtUserNameInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="User Name"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_username"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trPasswordInProfileSettings"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/txtPasswordInProfileSettings"
+                            android:layout_width="130dp"
+                            android:layout_height="25dp"
+                            android:text="Password"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:typeface="normal" />
+
+                        <EditText
+                            android:id="@+id/edit_text_password"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            
+                            android:background="@drawable/rounded_corner"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </TableRow>
+
+                    
+                </TableLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearOptionInProfileSettings"
+            android:layout_width="500dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/settingoption"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/btnSaveInProfileSettings"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Save"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/btnResetInProfileSettings"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Reset"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/btnBackInProfileSettings"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Back"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

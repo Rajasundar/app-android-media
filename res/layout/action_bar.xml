@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/head"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/btnMilanIconInMain"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent" />
+    
+     <Button
+        android:id="@+id/openProfileLeft"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="0dp"
+        android:background="@android:color/transparent"
+        android:onClick="clickEvent" />
+
+    <Button
+        android:id="@+id/openProfileRight"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:background="@android:color/transparent"
+        android:onClick="clickEvent"
+        android:gravity="center"
+        android:text="Profile1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#1870b8"
+         />
+
+</RelativeLayout>

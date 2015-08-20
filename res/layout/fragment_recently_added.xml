@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.devadvance.circulartest"
+    android:id="@+id/ParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:id="@+id/relForFoot"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtRightsReservedInMain"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text=" All Rights Reserved. \u00A9 Milanity "
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relForHead"
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/head" >
+
+        <View
+            android:id="@+id/emptyView"
+            android:layout_width="35dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:id="@+id/milanOS"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/emptyView" />
+
+        <TextView
+            android:id="@+id/txtForRooms"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/emptyView"
+            android:gravity="center"
+            android:textColor="#1870b8"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relForLoads"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relForFoot"
+        android:layout_below="@+id/relForHead"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/cntrlBtn"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cntrlbtn" />
+
+        <LinearLayout
+            android:id="@+id/relForLoadsAndIcons"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/cntrlBtn"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/linearForRecentMovies"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtForRecentMovies"
+                    android:layout_width="fill_parent"
+                    android:layout_height="22dp"
+                    android:background="@drawable/titlebg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="Recently Added Movies"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/txtForRecentMovies"
+                    android:layout_centerVertical="true" >
+
+                    <com.meetme.android.horizontallistview.HorizontalListView
+                        android:id="@+id/list_movies"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/linearForRecentAlbums"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtForRecentAlbums"
+                    android:layout_width="fill_parent"
+                    android:layout_height="22dp"
+                    android:background="@drawable/titlebg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="Recently Added Albums"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/txtForRecentAlbums"
+                    android:layout_centerVertical="true" >
+
+                    <com.meetme.android.horizontallistview.HorizontalListView
+                        android:id="@+id/list_albums"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relForSettings"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/cntrlBtn"
+            android:orientation="vertical"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relForOptions"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/optionbg"
+            android:visibility="gone" >
+
+            <ScrollView
+                android:id="@+id/scrollForOptions"
+                android:layout_width="80dp"
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="false"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/linearForIcons"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imgHome"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/home" />
+
+                    <TextView
+                        android:id="@+id/txtHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Home"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMovies"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/movies" />
+
+                    <TextView
+                        android:id="@+id/txtMovies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Movies"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMusic"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/music" />
+
+                    <TextView
+                        android:id="@+id/txtMusic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Music"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgPictures"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/pictures" />
+
+                    <TextView
+                        android:id="@+id/txtPictures"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Pictures"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgPlaylist"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/playlist" />
+
+                    <TextView
+                        android:id="@+id/txtPlaylist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Playlists"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/moremedia" />
+
+                    <TextView
+                        android:id="@+id/txtMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="More Media"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgYoutube"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/youtube" />
+
+                    <TextView
+                        android:id="@+id/txtYoutube"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="You Tube"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgRemote"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/remote" />
+
+                    <TextView
+                        android:id="@+id/txtRemote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Remote"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgSettings"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/settings" />
+
+                    <TextView
+                        android:id="@+id/txtSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Settings"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+   <ImageView
+		android:id="@+id/arrow"
+		android:layout_width="28dp"
+	    android:layout_height="fill_parent"
+	    android:layout_alignParentLeft="true"
+	    android:src="@drawable/optionarrow" />
+
+    <RelativeLayout
+        android:id="@+id/relForRemote"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relForFoot"
+        android:layout_below="@+id/relForHead"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/transparent_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/settingsframe"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+</RelativeLayout>

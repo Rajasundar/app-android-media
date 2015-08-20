@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ParentLayoutInProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:id="@+id/relForFootInAlbums"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtRightsReservedInAlbums"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text=" All Rights Reserved. \u00A9 Milanity "
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relForHead"
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/head" >
+        
+        <View
+            android:id="@+id/emptyView"
+            android:layout_width="35dp"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" />
+        
+        <View
+            android:id="@+id/milanOS"
+            android:layout_toLeftOf="@+id/emptyView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+        
+        <TextView
+            android:id="@+id/txtForRooms"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/emptyView"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:textColor="#1870b8"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/cntrlBtn"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/relForHead"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/cntrlbtn" />
+
+    <RelativeLayout
+        android:id="@+id/linearForTitleInProfileSettings"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/cntrlBtn"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/settingframe" >
+
+        <TextView
+            android:id="@+id/txtProfileSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Edit Profile"
+            android:textColor="#1870b8"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+   
+<ImageView
+        android:id="@+id/arrow"
+        android:layout_width="28dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/optionarrow" />
+    <LinearLayout
+        android:id="@+id/relMainInSettings"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/linearForTitleInProfileSettings"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <!--
+    <LinearLayout
+        android:id="@+id/linearForTitleInSettings"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titlebar" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="left|center_vertical"
+            android:text="Settings"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+    </LinearLayout>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/relSettingFrameInSettings"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/settingframe"
+            android:gravity="center_vertical" >
+
+            <ScrollView
+                android:id="@+id/scrollViewInProfileSettings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="7dp"
+                android:fadingEdge="none" >
+
+                <TableLayout
+                    android:id="@+id/tblLayoutInSettings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="330dp" 
+                    android:gravity="center_horizontal">
+                </TableLayout>
+            </ScrollView>
+        </RelativeLayout>
+         
+    </LinearLayout>
+
+</RelativeLayout>

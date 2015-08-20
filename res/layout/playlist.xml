@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ParentLayoutInMedia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <RelativeLayout
+        android:id="@+id/relForFootInMedia"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/footer"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtRightsReservedInMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text=" All Rights Reserved. \u00A9 Milanity "
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relForHead"
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/head" >
+
+        <View
+            android:id="@+id/emptyView"
+            android:layout_width="35dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:id="@+id/milanOS"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/emptyView" />
+
+        <TextView
+            android:id="@+id/txtForRooms"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/emptyView"
+            android:gravity="center"
+            android:textColor="#1870b8"
+           	android:textSize="16sp"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relForLoadsInMedia"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relForFootInMedia"
+        android:layout_below="@+id/relForHead"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/cntrlBtn"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cntrlbtn" />
+
+        <RelativeLayout
+            android:id="@+id/relForLoadsAndIconsInMedia"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/cntrlBtn" >
+
+            <RelativeLayout
+                android:id="@+id/relForMediaFoldersInMoreMedia"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <RelativeLayout
+                    android:id="@+id/relForTitleInMoreMedia"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/titlebar" >
+
+                    <TextView
+                        android:id="@+id/txtMoreMediaTitleInMoreMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="Playlist"
+                        android:textColor="#FFFF66"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    
+                </RelativeLayout>
+
+                <!--
+                <RelativeLayout
+		            android:id="@+id/linearForFolderIconInMoreMedia"
+		            android:layout_width="fill_parent"
+		            android:layout_height="50dp"
+		            android:layout_below="@+id/relForTitleInMoreMedia"
+		            android:gravity="center_horizontal"
+		            android:layout_marginLeft="10dp"
+		            android:layout_marginRight="10dp"
+		            android:layout_marginTop="7dp" >
+		
+		            <ImageView
+		                android:id="@+id/imgMusicFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="50dp"
+		                android:src="@drawable/musicfolder" />
+		
+		            <ImageView
+		                android:id="@+id/imgVideoFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="50dp"
+		                android:layout_marginLeft="30dp"
+		                android:layout_toRightOf="@+id/imgMusicFolderInMoreMedia"
+		                android:src="@drawable/videofolder" />
+		
+		            <ImageView
+		                android:id="@+id/imgPictureFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="50dp"
+		                android:layout_marginLeft="30dp"
+		                android:layout_toRightOf="@+id/imgVideoFolderInMoreMedia"
+		                android:src="@drawable/picturefolder" />
+		
+		        </RelativeLayout>
+                -->
+
+
+                <!--
+                <LinearLayout
+		            android:id="@+id/linearForFolderNamesInMoreMedia"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:layout_below="@+id/linearForFolderIconInMoreMedia"
+		            android:layout_marginLeft="10dp"
+		            android:layout_marginRight="10dp" >
+		
+		            <TextView
+		                android:id="@+id/txtMusicFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="wrap_content"
+		                android:gravity="center"
+		                android:text="Music"
+		                android:textColor="#FFFFFF"
+		                android:textSize="11sp" 
+		                android:textStyle="bold"/>
+		
+		            <TextView
+		                android:id="@+id/txtVideoFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="wrap_content"
+		                android:layout_marginLeft="30dp"
+		                android:gravity="center"
+		                android:text="Videos"
+		                android:textColor="#FFFFFF"
+		                android:textSize="11sp"
+		                android:textStyle="bold" />
+		
+		            <TextView
+		                android:id="@+id/txtPictureFolderInMoreMedia"
+		                android:layout_width="50dp"
+		                android:layout_height="wrap_content"
+		                android:layout_marginLeft="30dp"
+		                android:gravity="center"
+		                android:text="Pictures"
+		                android:textColor="#FFFFFF"
+		                android:textSize="11sp" 
+		                android:textStyle="bold"/>
+		        </LinearLayout>
+                -->
+
+                <RelativeLayout
+                    android:id="@+id/relForFolderDetInMoreMedia"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/relForTitleInMoreMedia"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mediabgboard" >
+
+                    <ScrollView
+                        android:id="@+id/scrollInMoreMedia"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="5dp"
+                        android:fadeScrollbars="false"
+                        android:fadingEdge="none"
+                        android:scrollbars="none" >
+
+                        <TableLayout
+                            android:id="@+id/tblLayoutInMoreMedia"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="10dp" >
+
+                            <TableRow
+                                android:id="@+id/imgMusicFolderInMoreMedia"
+                                android:layout_width="fill_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="5dp" >
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/musicfolder" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="15dp"
+                                    android:text="Audio Playlist"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/imgVideoFolderInMoreMedia"
+                                android:layout_width="fill_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="5dp" >
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/videofolder" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="15dp"
+                                    android:text="Video Playlist"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </TableRow>
+
+                            <!--
+                            <TableRow
+                                android:id="@+id/imgPictureFolderInMoreMedia"
+                                android:layout_width="fill_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="5dp" >
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/picturefolder" />
+
+                                <TextView
+                                    android:id="@+id/txtPictureFolderInMoreMedia"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="15dp"
+		               				 android:paddingLeft="5dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Pictures"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="14sp" />
+                            </TableRow>
+                            -->
+                        </TableLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/relForSettingsInMedia"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/cntrlBtnInMedia"
+            android:orientation="vertical"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relForOptionsInMedia"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/optionbg"
+            android:visibility="gone" >
+
+            <ScrollView
+                android:id="@+id/scrollForOptionsInMedia"
+                android:layout_width="80dp"
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="false"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/linearForIconsInMedia"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imgHomeInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/home" />
+
+                    <TextView
+                        android:id="@+id/txtHomeInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Homeadsasd"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMoviesInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/movies" />
+
+                    <TextView
+                        android:id="@+id/txtMoviesInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Movies"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMusicInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/music" />
+
+                    <TextView
+                        android:id="@+id/txtMusicInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Music"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgPicturesInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/pictures" />
+
+                    <TextView
+                        android:id="@+id/txtPicturesInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Pictures"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgPlaylistInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/playlist" />
+
+                    <TextView
+                        android:id="@+id/txtPlaylistInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Playlists"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgMediaInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/moremedia" />
+
+                    <TextView
+                        android:id="@+id/txtMediaInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="More Media"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgYoutubeInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/youtube" />
+
+                    <TextView
+                        android:id="@+id/txtYoutubeInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="You Tube"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgRemoteInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/remote" />
+
+                    <TextView
+                        android:id="@+id/txtRemoteInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Remote"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/imgSettingsInMedia"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/settings" />
+
+                    <TextView
+                        android:id="@+id/txtSettingsInMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Settings"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:typeface="normal" />
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="28dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/optionarrow" />
+
+    <RelativeLayout
+        android:id="@+id/relForRemoteInMedia"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relForFootInMedia"
+        android:layout_below="@+id/relForHeadInMedia"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+</RelativeLayout>

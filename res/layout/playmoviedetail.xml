@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relPlaySongdetail"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relForMovieDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/moviebackbg" >
+
+        <ImageView
+            android:id="@+id/closeInMovieDetail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/closebtn" />
+
+        <RelativeLayout
+            android:id="@+id/relForAlbumTitleInPlaySongDetail"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/closeInPlaySongDetail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/settingframe" >
+
+            <TextView
+                android:id="@+id/btnTitleInPlayMovieDetail"
+                android:layout_width="250dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#FFFF00"
+                android:textSize="14sp"
+                android:typeface="normal" />
+
+            <!--
+                 <ImageView
+                android:id="@+id/imgPlayInMovieDetails"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/playbtn" />
+            -->
+
+            <RelativeLayout
+                android:id="@+id/relForAlbumTitleInPlaySongDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnTitleInPlayMovieDetail"
+                android:layout_centerHorizontal="true" >
+
+                <ImageView
+                    android:id="@+id/play_movie_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/playbtn" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relForSongDetInPlaySongDetail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/relForAlbumTitleInPlaySongDetail"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp" >
+
+            <ScrollView
+                android:id="@+id/scrollInPlaySongDetail"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/settingframe"
+                android:fadeScrollbars="false"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/linearForMovieDetails"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:isIndicator="true"
+                        android:max="10"
+                        android:numStars="5"
+                        android:stepSize="0.1" />
+
+                    <LinearLayout
+                        android:id="@+id/linearDirectorInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtDirectorInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Director"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValDirectorInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearGenreInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtGenreInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Genre"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValGenreInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearYearInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtYearInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Year"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValYearInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearDurationInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtDurationInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Duration"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValDurationInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearTagLineInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtTagLineInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Tagline"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValTagLineInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearDescriptionInMovieDet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/txtDescriptionInMovieDet"
+                            android:layout_width="85dp"
+                            android:layout_height="20dp"
+                            android:gravity="center_vertical"
+                            android:text="Description"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+
+                        <TextView
+                            android:id="@+id/txtValDescriptionInMovieDet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="30dp"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:typeface="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
